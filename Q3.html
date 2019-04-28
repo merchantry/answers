@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computer Practicum II Midterm Q3</title>
+</head>
+<body>
+	<h1>​Palindrome Finder! </h1> 
+	<div>​Phrase:<input id="phrase" type="text" size="70" ​/> </div>  <br> 
+	<div><button id="find" onclick="findPalindrome()">Find Palindrome</button></div> 
+	<ul ​id="palindromes"​>
+	</ul> 
+	<div​ id="count"​></div> 
+<script type="text/javascript">
+	var isPalindrome = true;
+	function findPalindrome() {
+		var x = document.getElementById('phrase').value;
+		isPalindrome = true;
+		for (var i = 0; i < x.length; i++) {
+			if (x.charAt(i) != x.charAt(x.length - 1 - i)) {
+				isPalindrome = false;
+			}
+		}
+
+
+		if (isPalindrome) {
+			var pal = document.createElement("li");
+			pal.innerHTML = x;
+			var element = document.getElementById("count");
+			element.appendChild(pal);
+		}	
+	}
+</script>
+</body>
+</html>
